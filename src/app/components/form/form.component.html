@@ -3,60 +3,34 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-content-container">
       <app-input-form
-        label="Chassi"
-        type="number"
-        placeholder="123.456.789-09"
-        [control]="getControl('chassi')"
-      ></app-input-form>
-
-            <app-input-form
-        label="Cor do Veículo"
+        label="Finalidade"
         type="text"
-        placeholder="Vermelho"
-        [control]="getControl('cor')"
+        placeholder="Finalidade do Veiculo"
+        [control]="getControl('finalidade')"
       ></app-input-form>
 
       <app-input-form
-        label="Número de Portas"
-        type="number"
-        placeholder="Ricardo Castro"
-        [control]="getControl('numeroPortas')"
+        label="Localidade"
+        type="text"
+        placeholder="Localidade onde irá dirigir"
+        [control]="getControl('localidade')"
       ></app-input-form>
 
       <app-input-form
-        label="Placa"
+        label="Tempo da Locação"
+        type="number"
+        placeholder="Tempo em dias"
+        [control]="getControl('tempoLocacao')"
+      ></app-input-form>
+
+      <app-input-form
+        label="Placa do Veiculo"
         type="text"
-        placeholder="Placa"
-        [control]="getControl('placa')"
+        placeholder="Placa do Veiculo"
+        [control]="getControl('placaVeiculo')"
       >
       </app-input-form>
 
-      <app-input-form
-        label="Quilometragem"
-        type="number"
-        placeholder="150KM"
-        [control]="getControl('quilometragem')"
-      ></app-input-form>
-
-      <app-input-form
-        label="Renevam"
-        type="number"
-        placeholder="123456789"
-        [control]="getControl('renavam')"
-      ></app-input-form>
-
-      <app-input-form
-        label="Tipo de Combustível"
-        type="number"
-        placeholder="1 ou 2"
-        [control]="getControl('tipoCombustivel')"
-      ></app-input-form>
-      <app-input-form
-        label="Valor de Locação"
-        type="password"
-        placeholder="R$ 150,00"
-        [control]="getControl('valorLocacao')"
-      ></app-input-form>
     </div>
     <button [type]="'submit'">Salvar</button>
   </form>

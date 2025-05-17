@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { FormComponent } from './components/form/form.component';
-import { VeiculoService } from "./services/veiculo.service";
-import { Veiculo } from './components/model/Veiculo';
+import { LocacaoService } from "./services/locacao.service";
+import { Locacao } from './components/model/Locacao';
 
 
 @Component({
@@ -13,12 +13,12 @@ import { Veiculo } from './components/model/Veiculo';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  veiculoService = inject(VeiculoService);
+  locacaoService = inject(LocacaoService);
   router = inject(Router);
 
-  onSubmit(veiculo: Veiculo) {
-    this.veiculoService.cadastroVeiculo(veiculo);
-      alert(`Veiculo ${veiculo.chassi} cadastrado com sucesso!`);
+  onSubmit(locacao: Locacao) {
+    this.locacaoService.cadastrolocacaoVeiculo(locacao);
+      alert(`Locacao cadastrada com sucesso!`);
       this.router.navigateByUrl('/');
       
     // this.veiculoService.cadastroVeiculo(veiculo).subscribe((data) => {

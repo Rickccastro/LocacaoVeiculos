@@ -8,7 +8,7 @@ mat-error {
 }
 
 mat-label {
-  color: white !important;
+  color: rgb(0, 0, 0) !important;
 }
 
 .mdc-floating-label .mat-mdc-floating-label {
@@ -24,7 +24,7 @@ mat-label {
 
 .mat-mdc-text-field-wrapper {
   height: 3rem !important;
-  background-color: #6c3a09 !important;
+  background-color: #000000 !important;
   width: 100%;
   display: flex;
   align-items: center;

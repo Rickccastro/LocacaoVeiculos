@@ -8,7 +8,7 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { InputFormComponent } from '../input-form/input-form.component';
-import { Veiculo } from '../model/Veiculo';
+import { Locacao } from '../model/Locacao';
 
 @Component({
   selector: 'app-form',
@@ -23,41 +23,25 @@ import { Veiculo } from '../model/Veiculo';
   styleUrl: './form.component.css',
 })
 export class FormComponent {
-  @Input() veiculo: Veiculo | null = null;
-  @Output() send = new EventEmitter<Veiculo>();
+  @Input() locacao: Locacao | null = null;
+  @Output() send = new EventEmitter<Locacao>();
   form!: FormGroup;
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      chassi: new FormControl<string>(this.veiculo?.chassi ?? '', {
+      finalidade: new FormControl<string>(this.locacao?.finalidade ?? '', {
         nonNullable: true,
         validators: [Validators.required],
       }),
-      cor: new FormControl<string>(this.veiculo?.cor ?? '', {
+      localidade: new FormControl<string>(this.locacao?.localidade ?? '', {
         nonNullable: true,
         validators: Validators.required,
       }),
-      numeroPortas: new FormControl<string>(this.veiculo?.numeroPortas ?? '', {
+      tempoLocacao: new FormControl<string>(this.locacao?.tempoLocacao ?? '', {
         nonNullable: true,
         validators: [Validators.required],
       }),
-      placa: new FormControl<string>(this.veiculo?.placa ?? '', {
-        nonNullable: true,
-        validators: [Validators.required],
-      }),
-      quilometragem: new FormControl<number>(this.veiculo?.quilometragem ?? 0, {
-        nonNullable: true,
-        validators: [Validators.required],
-      }),
-      renavam: new FormControl<number>(this.veiculo?.renavam ?? 0, {
-        nonNullable: true,
-        validators: [Validators.required],
-      }),
-      tipoCombustivel: new FormControl<number>(this.veiculo?.tipoCombustivel ?? 0, {
-        nonNullable: true,
-        validators: [Validators.required],
-      }),
-      valorLocacao: new FormControl<string>(this.veiculo?.valorLocacao ?? '', {
+      placaVeiculo: new FormControl<string>(this.locacao?.placaVeiculo ?? '', {
         nonNullable: true,
         validators: [Validators.required],
       }),
@@ -65,8 +49,8 @@ export class FormComponent {
   }
 
   onSubmit() {
-    const veiculo = this.form.value as Veiculo;
-    this.send.emit(veiculo);
+    const locacao = this.form.value as Locacao;
+    this.send.emit(locacao);
   }
 
   getControl(controlName: string): FormControl {
