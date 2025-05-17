@@ -1,0 +1,63 @@
+<div class="form-container">
+  <h1>Cadastro de Veiculos</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-content-container">
+      <app-input-form
+        label="Chassi"
+        type="number"
+        placeholder="123.456.789-09"
+        [control]="getControl('chassi')"
+      ></app-input-form>
+
+            <app-input-form
+        label="Cor do Veículo"
+        type="text"
+        placeholder="Vermelho"
+        [control]="getControl('cor')"
+      ></app-input-form>
+
+      <app-input-form
+        label="Número de Portas"
+        type="number"
+        placeholder="Ricardo Castro"
+        [control]="getControl('numeroPortas')"
+      ></app-input-form>
+
+      <app-input-form
+        label="Placa"
+        type="text"
+        placeholder="Placa"
+        [control]="getControl('placa')"
+      >
+      </app-input-form>
+
+      <app-input-form
+        label="Quilometragem"
+        type="number"
+        placeholder="150KM"
+        [control]="getControl('quilometragem')"
+      ></app-input-form>
+
+      <app-input-form
+        label="Renevam"
+        type="number"
+        placeholder="123456789"
+        [control]="getControl('renavam')"
+      ></app-input-form>
+
+      <app-input-form
+        label="Tipo de Combustível"
+        type="number"
+        placeholder="1 ou 2"
+        [control]="getControl('tipoCombustivel')"
+      ></app-input-form>
+      <app-input-form
+        label="Valor de Locação"
+        type="password"
+        placeholder="R$ 150,00"
+        [control]="getControl('valorLocacao')"
+      ></app-input-form>
+    </div>
+    <button [type]="'submit'">Salvar</button>
+  </form>
+</div>
